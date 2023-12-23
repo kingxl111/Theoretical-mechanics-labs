@@ -4,7 +4,7 @@ import matplotlib.pyplot as pplt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 
-T = np.linspace(0, 10, 1000)
+T = np.linspace(0, 10, 100)
 Psi = np.sin(-0.5*T)
 fgr = pplt.figure()
 plt = fgr.add_subplot(1,1,1)
@@ -17,9 +17,10 @@ r = 0.2
 X0 = 0
 Y0 = 0
 Phi = Psi + np.pi/6
+# Phi = np.linspace(0, -100*np.pi, 1000)
 
 # Шаблон большой окружности 
-Alp = np.linspace(0, 2*np.pi, 1000)
+Alp = np.linspace(0, 1000*np.pi, 100)
 Xc1 = R * np.cos(Alp)
 Yc1 = R * np.sin(Alp)
 
@@ -65,4 +66,4 @@ def update(i):
     return
 
 anim = FuncAnimation(fgr, update, frames = len(T), interval = 1)
-fgr.show()
+pplt.show()
